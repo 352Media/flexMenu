@@ -1,7 +1,7 @@
 #flexMenu
 flexMenu is a jQuery plugin that lets you create responsive menus that automatically collapse into a "more" drop-down when they run out of space.
 
-Demo! (Coming soon)
+[Demo](http://352media.github.com/flexMenu/)
 
 [Source on GitHub](https://github.com/352Media/flexMenu)
 
