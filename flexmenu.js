@@ -1,5 +1,5 @@
 /*	jQuery.flexMenu
-	Author: Ryan DeBeasi (352 Media Group)
+	Author: Ryan DeBeasi (352 Media Group) - http://www.352media.com/
 	Description: If a list is too long for all items to fit on one line, display a popup menu instead. 
 	Dependencies: jQuery, Modernizr. Modernizr is optional and allows us to force requireClick to be true if touch is supported. */
 (function ($) {

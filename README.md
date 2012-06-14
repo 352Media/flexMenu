@@ -1,8 +1,11 @@
 #flexMenu
-Create responsive menus that automatically collapse into a "more" drop-down when they run out of space.
+flexMenu is a jQuery plugin that lets you create responsive menus that automatically collapse into a "more" drop-down when they run out of space.
 
 Demo! (Coming soon)
+
 [Source on GitHub](https://github.com/352Media/flexMenu)
+
+Written by (Ryan DeBeasi)[http://www.ryandebeasi.com/] of (352 Media Group)[http://www.352media.com/].
 
 ##Usage
 
@@ -27,6 +30,13 @@ function resizeFunctions() {
 }
 ```
 
+In most cases, you'll also want to set the popup menu to be absolutely positioned:
+```css
+.flexMenu-popup {
+  position: absolute;
+}
+```
+
 ##Dependencies
 
 ###jQuery
@@ -34,6 +44,10 @@ I've tested the plugin in jQuery 1.7.1 and 1.7.2.
 
 ###Modernizr
 [Modernizr](http://modernizr.com/) is optional. If it's available, flexMenu will use it to detect touch support. If touch support is available, we'll toggle the menu on click. If touch support is not available, we'll toggle the menu on hover in/out. That way, we can avoid triggering the funky [simulated mouseover/mouseout](http://developer.apple.com/library/ios/#DOCUMENTATION/AppleApplications/Reference/SafariWebContent/HandlingEvents/HandlingEvents.html#//apple_ref/doc/uid/TP40006511-SW17) that happens on many touchscreen devices.
+
+If Modernizr is not available, we'll always toggle the menu on click.
+
+The zip for flexMenu includes a build of Modernizr contains only touch detection and the has-js/no-js class. Feel free to use this build, or go with more full-featured build if you're using other features. Or, if you do want to always toggle the menu on click, there is no need to include Modernizr at all.
 
 ##Advanced usage
 

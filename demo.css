@@ -1,0 +1,154 @@
+/* HTML5 Boilerplate  */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html, button, input, select, textarea { font-family: sans-serif; color: #222; }
+body { margin: 0; font-size: 1em; line-height: 1.4; }
+
+a, a:visited { color: #006363; }
+a:hover { color: #1D7373; }
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+blockquote { margin: 1em 40px; }
+dfn { font-style: italic; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+ins { background: #ff9; color: #000; text-decoration: none; }
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } 
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } 
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } 
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+
+
+/* flexMenu demo Styles */
+
+body {
+  font-family: "Georgia", serif;
+}
+
+h1, h2 {
+  color: #006363;
+  font-weight: 700;
+  font-family: 'Quantico', sans-serif;
+}
+
+.header, .main {
+  padding: .5em 1em;
+
+}
+
+.header {
+  background-color: #5CCCCC;
+  margin: 1em;
+  /*border-bottom: 1px solid #006363;*/
+}
+
+.footer {
+  border-top: 1px solid #ccc;
+  background-color: #eee;
+  padding: 1em;
+
+}
+
+/* General Menu Styles */
+
+.menu {
+  list-style-type: none;
+  margin: 0;
+  background: #eeeeee; /* Old browsers */
+  padding: 0;
+  background: -moz-linear-gradient(top,  #eeeeee 0%, #cccccc 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #eeeeee 0%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #eeeeee 0%,#cccccc 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #eeeeee 0%,#cccccc 100%); /* IE10+ */
+  background: linear-gradient(top,  #eeeeee 0%,#cccccc 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+  line-height: 1;
+}
+
+.js .menu {
+  /* If we have JavaScript enabled and we're just waiting for flexMenu to load and run, hide list items that don't fit on one line. If JavaScript is not enabled, just show 'em all. */
+  height: 1.5em;
+  overflow: hidden;
+}
+
+.menu > li {
+  margin: 0 0 0 1.5em;
+  display: inline-block;
+  /*height: 2em;*/
+}
+
+.menu > li:first-child {
+  margin-left: 0;
+}
+
+.menu a {
+  display: inline-block;
+  text-decoration: none;
+  padding: .25em .25em .25em .25em;
+  height: 1em;
+  height: 1em;
+  color: #000;
+  font-family: 'Quantico', sans-serif;
+  font-weight: 700;
+}
+
+.menu a:hover {
+  background-color: #006363;
+  color: #fff;
+}
+
+/* flexMenu styles */
+
+.flexMenu-viewMore > a {
+  background-color: #FF9640;
+}
+
+.flexMenu-viewMore.active > a, .flexMenu-viewMore > a:hover {
+  background-color: #FF7400;
+}
+
+.flexMenu-popup {
+  position: absolute;
+  list-style-type: none;
+  padding: 0;
+  background-color: #5CCCCC;
+}
+
+.flexMenu-popup a {
+  display: block;
+}
+
+.flexMenu-popup a:hover {
+  background-color: #006363;
+  color: #fff;
+  display: block;
+}
