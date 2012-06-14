@@ -5,7 +5,7 @@ Demo! (Coming soon)
 
 [Source on GitHub](https://github.com/352Media/flexMenu)
 
-Written by (Ryan DeBeasi)[http://www.ryandebeasi.com/] of (352 Media Group)[http://www.352media.com/].
+Written by [Ryan DeBeasi](http://www.ryandebeasi.com/) of [352 Media Group](http://www.352media.com/).
 
 ##Usage
 
