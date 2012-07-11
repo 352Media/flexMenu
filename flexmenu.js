@@ -45,7 +45,7 @@
 				}
 				$this.append('<li class="flexMenu-viewMore"><a href="#" title="' + s.linkTitle + '">' + s.linkText + '</a></li>');
 				$moreItem = $this.find('li.flexMenu-viewMore');
-				/// Check to see whether the more link has been pushed down. This might happen ift the link immediately before it is especially wide.
+				/// Check to see whether the more link has been pushed down. This might happen if the link immediately before it is especially wide.
 				if (needsMenu($moreItem)) {
 					$this.find('li:nth-last-child(2)').appendTo($popup);
 				}
