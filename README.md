@@ -47,7 +47,7 @@ I've tested the plugin in jQuery 1.7.1 and 1.7.2.
 
 If Modernizr is not available, we'll always toggle the menu on click.
 
-The zip for flexMenu includes a build of Modernizr contains only touch detection and the has-js/no-js class. Feel free to use this build, or go with more full-featured build if you're using other features. Or, if you do want to always toggle the menu on click, there is no need to include Modernizr at all.
+The zip for flexMenu includes a build of Modernizr contains only touch detection and the has-js/no-js class. Feel free to use this build, or go with more full-featured build if you're using other features. Or, if you do want to always toggle the menu on click, there is no need to include Modernizr at all - just [set up a js/no-js class](http://paulirish.com/2009/avoiding-the-fouc-v3/) and you'll be good to go.
 
 ##Advanced usage
 
