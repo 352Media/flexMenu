@@ -61,7 +61,7 @@ If there are this many items or fewer in the list, we will not display a "View M
 (string, defaults to 'More')
 What text should we display on the "view  more" link?
 
-###linkTitle'
+###linkTitle
 (string, defaults to 'View More')
 What should the title of the "view more" button be?
 
