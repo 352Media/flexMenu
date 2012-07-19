@@ -137,7 +137,6 @@ h1, h2 {
 }
 
 .flexMenu-popup {
-  position: absolute;
   list-style-type: none;
   padding: 0;
   background-color: #5CCCCC;

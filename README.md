@@ -17,25 +17,7 @@ Call flexMenu on an unordered list that contains your menu items.
 $('ul.menu.flex').flexMenu();
 ```
 
-If you are using this script on a responsive site, you'll also want to recalculate the menus on resize. Because many resize events will be fired as the user resizes the window, it's best to wait a few hundred milliseconds after the last resize event fires before recalculating the menu.
-
-```javascript
-$(window).resize(function () {
-	resizeTimeout = setTimeout(resizeFunctions, 300);
-});
-
-function resizeFunctions() {
-	$('ul.menu.flex').flexMenu({'undo': true });
-	$('ul.menu.flex').flexMenu();
-}
-```
-
-In most cases, you'll also want to set the popup menu to be absolutely positioned:
-```css
-.flexMenu-popup {
-  position: absolute;
-}
-```
+The menu will automatically be adjusted as the page is resized.
 
 ##Dependencies
 
@@ -69,9 +51,13 @@ What should the title of the "view more" button be?
 (boolean, defaults to 'true')
 Should we we show the menu on hover? If not, we'll require a click. If we're on a touch device - or if Modernizr is not available - we'll ignore this setting and only show the menu on click. The reason for this is that touch devices emulate hover events in unpredictable ways, causing some taps to do nothing.
 
+###popupAbsolute
+(boolean, defaults to 'true')
+If this is set to true, the poupup will be absolutely positioned. That way, it [isn't clipped](http://www.w3.org/TR/CSS21/visufx.html#overflow-clipping) by parent elements that have ```overflow: hidden``` and appears on top of the rest of your page. Feel free to set this to false if you want to do something else in your CSS.
+
 ###undo
 (boolean, defaults to 'false')
-If this is true, we'll move the list items back to where they were before, and remove the "View More" link. This is useful if you actually _do_ want list items to stack in some cases, or if you want to recalculate the menu.
+If this is true, we'll move the list items back to where they were before, and remove the "View More" link. This is useful if you actually _do_ want list items to stack in some cases. You could also undo flexMenu and run it again if you want to manually adjust the menu.
 
 ##License
 

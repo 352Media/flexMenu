@@ -47,17 +47,6 @@
 &lt;/ul&gt;</pre>
 		<h2>The JavaScript</h2>
 <pre>$('ul.menu.flex').flexMenu();</pre>
-		<h2>Adjusting on resize</h2>
-		<p>If you're using flexText on a fluid-width page such as this one, you'll probably want to adjust the menu when the user resizes the page, as shown below. (If you're using flexMenu on a fixed-width page or in a context where the user can't resize the window, feel free to leave this bit out.)</p>
-<pre>$(window).resize(function () {
-    resizeTimeout = setTimeout(resizeFunctions, 300);
-});
-
-function resizeFunctions() {
-    $('ul.menu.flex').flexMenu({'undo': true });
-    $('ul.menu.flex').flexMenu();
-}
-</pre>
 
 	</div>
 
@@ -72,15 +61,6 @@ function resizeFunctions() {
 
 	<script type="text/javascript">
 		$('ul.menu.flex').flexMenu();
-
-		$(window).resize(function () {
-			resizeTimeout = setTimeout(resizeFunctions, 300);
-		});
-
-		function resizeFunctions() {
-				$('ul.menu.flex').flexMenu({'undo': true });
-				$('ul.menu.flex').flexMenu();
-		}
 	</script>
 
 </body>
