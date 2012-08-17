@@ -102,7 +102,7 @@ h1, h2 {
 
 .menu > li {
   margin: 0 0 0 1.5em;
-  display: inline-block;
+  float: left;
   /*height: 2em;*/
 }
 
@@ -111,7 +111,7 @@ h1, h2 {
 }
 
 .menu a {
-  display: inline-block;
+  display: block;
   text-decoration: none;
   padding: .25em .25em .25em .25em;
   height: 1em;
@@ -137,10 +137,13 @@ h1, h2 {
 }
 
 .flexMenu-popup {
-  position: absolute;
   list-style-type: none;
   padding: 0;
   background-color: #5CCCCC;
+  margin: 0;
+}
+
+.lt-ie8 .flexMenu-popup {
 }
 
 .flexMenu-popup a {
