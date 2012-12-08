@@ -67,9 +67,9 @@
 					}
 				}
 				if (allInPopup) {
-					$this.append('<li class="flexMenu-viewMore flexMenu-allInPopup"><a href="#" title="' + s.linkTitleAll + '">' + s.linkTextAll + '</a></li>');
+					$this.append('<li class="flexMenu-viewMore flexMenu-allInPopup"><a href="#" class="moreLink" title="' + s.linkTitleAll + '">' + s.linkTextAll + '</a></li>');
 				} else {
-					$this.append('<li class="flexMenu-viewMore"><a href="#" title="' + s.linkTitle + '">' + s.linkText + '</a></li>');
+					$this.append('<li class="flexMenu-viewMore"><a href="#" class="moreLink" title="' + s.linkTitle + '">' + s.linkText + '</a></li>');
 				}
 				
 				$moreItem = $this.find('li.flexMenu-viewMore');
@@ -80,8 +80,8 @@
 				// Our popup menu is currently in reverse order. Let's fix that.
 				$popup.children().each(function (i, li) {$popup.prepend(li); });
 				$moreItem.append($popup);
-				$moreLink = $this.find('li.flexMenu-viewMore > a');
-				$moreItem.click(function (e) {
+				$moreLink = $this.find('a.moreLink');
+				$moreLink.click(function (e) {
 					$popup.toggle();
 					$(this).toggleClass('active'); // Using 'this' because toggling the class of $moreItem would sometimes toggle the wrong more link's class, or not toggle at all.
 					e.preventDefault();
