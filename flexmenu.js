@@ -81,9 +81,9 @@
 				$popup.children().each(function (i, li) {$popup.prepend(li); });
 				$moreItem.append($popup);
 				$moreLink = $this.find('li.flexMenu-viewMore > a');
-				$moreItem.click(function (e) {
+				$moreLink.click(function (e) {
 					$popup.toggle();
-					$(this).toggleClass('active'); // Using 'this' because toggling the class of $moreItem would sometimes toggle the wrong more link's class, or not toggle at all.
+					$moreItem.toggleClass('active');
 					e.preventDefault();
 				});
 				if (s.showOnHover && (typeof Modernizr !== 'undefined') && !Modernizr.touch) { // If requireClick is false AND touch is unsupported, then show the menu on hover. If Modernizr is not available, assume that touch is unsupported. Through the magic of lazy evaluation, we can check for Modernizr and start using it in the same if statement. Reversing the order of these variables would produce an error.
