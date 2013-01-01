@@ -81,7 +81,7 @@
 				$popup.children().each(function (i, li) {$popup.prepend(li); });
 				$moreItem.append($popup);
 				$moreLink = $this.find('li.flexMenu-viewMore > a');
-				$moreItem.click(function (e) {
+				$moreLink.click(function (e) {
 					$popup.toggle();
 					$moreItem.toggleClass('active');
 					e.preventDefault();
