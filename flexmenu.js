@@ -9,6 +9,9 @@
 	function adjustFlexMenu() {
 		$flexParents.flexMenu({'undo': true }).flexMenu();
 	}
+	function collapseActiveMenus() {
+		$activeMenus = $('.flexMenu-viewMore.active ul').toggle().parent().toggleClass('active');
+	}
 	$(window).resize(function () {
 		clearTimeout(resizeTimeout);
 	    resizeTimeout = setTimeout(adjustFlexMenu, 200);
@@ -82,6 +85,9 @@
 				$moreItem.append($popup);
 				$moreLink = $this.find('li.flexMenu-viewMore > a');
 				$moreLink.click(function (e) {
+					//Collapsing any other open flexMenu
+					collapseActiveMenus();
+					//Open and Set active the one being interacted with.
 					$popup.toggle();
 					$moreItem.toggleClass('active');
 					e.preventDefault();
