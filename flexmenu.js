@@ -1,7 +1,8 @@
-/*	jQuery.flexMenu
-	Author: Ryan DeBeasi (352 Media Group) - http://www.352media.com/
+/*	jQuery.flexMenu 1.1
+	https://github.com/352Media/flexMenu
 	Description: If a list is too long for all items to fit on one line, display a popup menu instead. 
 	Dependencies: jQuery, Modernizr (optional). Without Modernizr, the menu can only be shown on click (not hover). */
+
 (function ($) {
 	var $flexParents = $(''), // A collection of all elements on which flexMenu has been called.
 		resizeTimeout;
@@ -10,10 +11,9 @@
 		$flexParents.flexMenu({'undo': true }).flexMenu();
 	}
 	function collapseAllExcept($menuToAvoid) {
-		var $menuToAvoid,
-			$allActiveMenus,
+		var $activeMenus,
 			$menusToCollapse;
-		$allActiveMenus = $('li.flexMenu-viewMore.active');
+		$activeMenus = $('li.flexMenu-viewMore.active');
 		$menusToCollapse = $allActiveMenus.not($menuToAvoid);
 		$menusToCollapse.removeClass('active').find('> ul').hide();
 	}
@@ -67,8 +67,8 @@
 					// If there only a few items left in the navigation bar, move them all to the popup menu.
 					if ((i - 1) <= s.cutoff) { // We've removed the ith item, so i - 1 gives us the number of items remaining.
 						$($this.children().get().reverse()).appendTo($popup);
-					 	allInPopup = true;
-					 	break;
+						allInPopup = true;
+						break;
 					}
 
 					if (!keepLooking) {
@@ -80,7 +80,6 @@
 				} else {
 					$this.append('<li class="flexMenu-viewMore"><a href="#" title="' + s.linkTitle + '">' + s.linkText + '</a></li>');
 				}
-				
 				$moreItem = $this.find('li.flexMenu-viewMore');
 				/// Check to see whether the more link has been pushed down. This might happen if the link immediately before it is especially wide.
 				if (needsMenu($moreItem)) {

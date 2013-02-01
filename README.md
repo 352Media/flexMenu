@@ -1,4 +1,4 @@
-#flexMenu
+#flexMenu 1.1
 flexMenu is a jQuery plugin that lets you create responsive menus that automatically collapse into a "more" drop-down when they run out of space.  When there's only space to display one or two items, all the items collapse into a "menu" drop-down.
 
 [Demo](http://352media.github.com/flexMenu/)
@@ -20,7 +20,7 @@ $('ul.menu.flex').flexMenu();
 ##Dependencies
 
 ###jQuery
-I've tested the plugin in jQuery 1.7.1, 1.7.2, and 1.8.0. It probably works on older versions, but I haven't tested on those.
+I've tested the plugin in jQuery 1.7-1.9. It probably works on older versions, but I haven't tested on those.
 
 ###Modernizr
 [Modernizr](http://modernizr.com/) is optional. If it's available, flexMenu will use it to detect touch support. If touch support is available, we'll toggle the menu on click. If touch support is not available, we'll toggle the menu on hover in/out. That way, we can avoid triggering the funky [simulated mouseover/mouseout](http://developer.apple.com/library/ios/#DOCUMENTATION/AppleApplications/Reference/SafariWebContent/HandlingEvents/HandlingEvents.html#//apple_ref/doc/uid/TP40006511-SW17) that happens on many touchscreen devices.
