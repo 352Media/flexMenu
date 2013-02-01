@@ -14,7 +14,7 @@
 		var $activeMenus,
 			$menusToCollapse;
 		$activeMenus = $('li.flexMenu-viewMore.active');
-		$menusToCollapse = $allActiveMenus.not($menuToAvoid);
+		$menusToCollapse = $activeMenus.not($menuToAvoid);
 		$menusToCollapse.removeClass('active').find('> ul').hide();
 	}
 	$(window).resize(function () {
