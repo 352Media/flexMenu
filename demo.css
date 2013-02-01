@@ -126,6 +126,20 @@ h1, h2 {
   color: #fff;
 }
 
+.flex-multi {
+  float: left;
+  width: 45%;
+  margin-bottom: 100px;
+}
+
+.flex-multi + .flex-multi {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
 /* flexMenu styles */
 
 .flexMenu-viewMore > a {

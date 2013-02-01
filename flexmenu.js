@@ -9,8 +9,13 @@
 	function adjustFlexMenu() {
 		$flexParents.flexMenu({'undo': true }).flexMenu();
 	}
-	function collapseActiveMenus() {
-		$activeMenus = $('.flexMenu-viewMore.active ul').toggle().parent().toggleClass('active');
+	function collapseAllExcept($menuToAvoid) {
+		var $menuToAvoid,
+			$allActiveMenus,
+			$menusToCollapse;
+		$allActiveMenus = $('li.flexMenu-viewMore.active');
+		$menusToCollapse = $allActiveMenus.not($menuToAvoid);
+		$menusToCollapse.removeClass('active').find('> ul').hide();
 	}
 	$(window).resize(function () {
 		clearTimeout(resizeTimeout);
@@ -30,6 +35,7 @@
 		}, options);
 		return this.each(function () {
 			var $this = $(this),
+				$self = $this,
 				$firstItem = $this.find('li:first-child'),
 				$lastItem = $this.find('li:last-child'),
 				numItems = $this.find('li').length,
@@ -85,8 +91,8 @@
 				$moreItem.append($popup);
 				$moreLink = $this.find('li.flexMenu-viewMore > a');
 				$moreLink.click(function (e) {
-					//Collapsing any other open flexMenu
-					collapseActiveMenus();
+					// Collapsing any other open flexMenu
+					collapseAllExcept($moreItem);
 					//Open and Set active the one being interacted with.
 					$popup.toggle();
 					$moreItem.toggleClass('active');
