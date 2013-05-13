@@ -54,7 +54,7 @@
 				$lastItem = $this.find('li:last-child'),
 				numItems = $this.find('li').length,
 				firstItemTop = Math.floor($firstItem.offset().top),
-				firstItemHeight = Math.floor($firstItem.height()),
+				firstItemHeight = Math.floor($firstItem.outerHeight(true)),
 				$lastChild,
 				keepLooking,
 				$moreItem,
