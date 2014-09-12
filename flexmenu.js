@@ -1,4 +1,4 @@
-/*	jQuery.flexMenu 1.1
+/*	jQuery.flexMenu 1.1.1
 	https://github.com/352Media/flexMenu
 	Description: If a list is too long for all items to fit on one line, display a popup menu instead.
 	Dependencies: jQuery, Modernizr (optional). Without Modernizr, the menu can only be shown on click (not hover). */
@@ -49,9 +49,10 @@
 		}
 		return this.each(function () {
 			var $this = $(this),
+				$items = $this.find('> li'),
 				$self = $this,
-				$firstItem = $this.find('li:first-child'),
-				$lastItem = $this.find('li:last-child'),
+				$firstItem = $items.first(),
+				$lastItem = $items.last(),
 				numItems = $this.find('li').length,
 				firstItemTop = Math.floor($firstItem.offset().top),
 				firstItemHeight = Math.floor($firstItem.outerHeight(true)),
@@ -74,7 +75,7 @@
 					firstItemOffset = $firstItem.offset().top;
 				for (i = numItems; i > 1; i--) {
 					// Find all of the list items that have been pushed below the first item. Put those items into the popup menu. Put one additional item into the popup menu to cover situations where the last item is shorter than the "more" text.
-					$lastChild = $this.find('li:last-child');
+					$lastChild = $this.find('> li:last-child');
 					keepLooking = (needsMenu($lastChild));
 					$lastChild.appendTo($popup);
 					// If there only a few items left in the navigation bar, move them all to the popup menu.
@@ -92,17 +93,17 @@
 				} else {
 					$this.append('<li class="flexMenu-viewMore"><a href="#" title="' + s.linkTitle + '">' + s.linkText + '</a></li>');
 				}
-				$moreItem = $this.find('li.flexMenu-viewMore');
+				$moreItem = $this.find('> li.flexMenu-viewMore');
 				/// Check to see whether the more link has been pushed down. This might happen if the link immediately before it is especially wide.
 				if (needsMenu($moreItem)) {
-					$this.find('li:nth-last-child(2)').appendTo($popup);
+					$this.find('> li:nth-last-child(2)').appendTo($popup);
 				}
 				// Our popup menu is currently in reverse order. Let's fix that.
 				$popup.children().each(function (i, li) {
 					$popup.prepend(li);
 				});
 				$moreItem.append($popup);
-				$moreLink = $this.find('li.flexMenu-viewMore > a');
+				$moreLink = $this.find('> li.flexMenu-viewMore > a');
 				$moreLink.click(function (e) {
 					// Collapsing any other open flexMenu
 					collapseAllExcept($moreItem);
@@ -126,10 +127,10 @@
 				$menu = $this.find('ul.flexMenu-popup');
 				numToRemove = $menu.find('li').length;
 				for (i = 1; i <= numToRemove; i++) {
-					$menu.find('li:first-child').appendTo($this);
+					$menu.find('> li:first-child').appendTo($this);
 				}
 				$menu.remove();
-				$this.find('li.flexMenu-viewMore').remove();
+				$this.find('> li.flexMenu-viewMore').remove();
 			}
 		});
 	};
