@@ -19,6 +19,16 @@ Finally, call flexMenu on an unordered list that contains your menu items:
 $('ul.menu.flex').flexMenu();
 ```
 
+###AMD/RequireJS
+
+The plugin can be loaded using an AMD loader such as RequireJS:
+
+```javascript
+require(['jquery', 'flexmenu'], function ($) {
+    $('ul.menu.flex').flexMenu();
+});
+```
+
 ##Dependencies
 
 ###jQuery
