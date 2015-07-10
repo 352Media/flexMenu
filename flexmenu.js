@@ -3,7 +3,15 @@
 	Description: If a list is too long for all items to fit on one line, display a popup menu instead.
 	Dependencies: jQuery, Modernizr (optional). Without Modernizr, the menu can only be shown on click (not hover). */
 
-(function ($) {
+(function (factory) {
+	if (typeof define === 'function' && define.amd) {
+		// AMD. Register as an anonymous module.
+		define(['jquery'], factory);
+	} else {
+		// Browser globals
+		factory(jQuery);
+	}
+}(function ($) {
 	var flexObjects = [], // Array of all flexMenu objects
 		resizeTimeout;
 	// When the page is resized, adjust the flexMenus.
@@ -134,4 +142,4 @@
 			}
 		});
 	};
-})(jQuery);
+}));

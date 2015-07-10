@@ -5,18 +5,28 @@ flexMenu is a jQuery plugin that lets you create responsive menus that automatic
 
 [Source on GitHub](https://github.com/352Media/flexMenu)
 
-Author: [Ryan DeBeasi](http://www.ryandebeasi.com/)
-
-Contributors: [Pete Bernardo](https://github.com/peterbernardo), [Dennis S. Hennen](https://github.com/dsh), and [Blake McLeod](https://github.com/bmcleod)
+Written by [Ryan DeBeasi](http://www.ryandebeasi.com/) and [our fantastic contributors](https://github.com/352Media/flexMenu/graphs/contributors).
 
 ##Usage
 
+First, download flexmenu.js from GitHub or install it with `bower install flexmenu`. Then, add a script tag that references flexMenu. For example: `<script src="flexmenu.js"></script>`.
+
 Create an unordered list that contains your menu items. In CSS, use `display: inline-block;` or `float: left;` to get the  `li` elements to line up horizontally.
 
-Call flexMenu on an unordered list that contains your menu items.
+Finally, call flexMenu on an unordered list that contains your menu items:
 
 ```javascript
 $('ul.menu.flex').flexMenu();
+```
+
+###AMD/RequireJS
+
+The plugin can be loaded using an AMD loader such as RequireJS:
+
+```javascript
+require(['jquery', 'flexmenu'], function ($) {
+    $('ul.menu.flex').flexMenu();
+});
 ```
 
 ##Dependencies
@@ -75,7 +85,7 @@ Should we absolutely position the popup? Usually this is a good idea. That way, 
 
 flexMenu is licensesed under the MIT License, and is free for commercial or personal use.
 
-Copyright &copy; 2012 352 Media Group
+Copyright &copy; 2012-2014 352 Inc. & Contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
