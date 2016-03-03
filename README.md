@@ -81,6 +81,10 @@ If this is true, we'll move the list items back to where they were before, and r
 (boolean, defaults to 'true')
 Should we absolutely position the popup? Usually this is a good idea. That way, the popup can appear over other content and spill outside a parent that has overflow: hidden set. If you want to do something different from this in CSS, just set this option to false.
 
+###popupClass
+(string, defaults to '')
+If this is set, this class will be added to the popup
+
 ##License
 
 flexMenu is licensesed under the MIT License, and is free for commercial or personal use.
