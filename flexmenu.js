@@ -47,7 +47,7 @@
 				'showOnHover' : true, // [boolean] Should we we show the menu on hover? If not, we'll require a click. If we're on a touch device - or if Modernizr is not available - we'll ignore this setting and only show the menu on click. The reason for this is that touch devices emulate hover events in unpredictable ways, causing some taps to do nothing.
 				'popupAbsolute' : true, // [boolean] Should we absolutely position the popup? Usually this is a good idea. That way, the popup can appear over other content and spill outside a parent that has overflow: hidden set. If you want to do something different from this in CSS, just set this option to false.
 				'popupClass' : '', // [string] If this is set, this class will be added to the popup
-        'undo' : false // [boolean] Move the list items back to where they were before, and remove the "View More" link.
+				'undo' : false // [boolean] Move the list items back to where they were before, and remove the "View More" link.
 			}, options);
 		this.options = s; // Set options on object
 		checkFlexObject = $.inArray(this, flexObjects); // Checks if this object is already in the flexObjects array
@@ -83,9 +83,7 @@
 				// Move all list items after the first to this new popup ul
 					firstItemOffset = $firstItem.offset().top;
 				// Add class if popupClass option is set
-        if(s.popupClass != '') {
-          $popup.addClass(s.popupClass);
-        }
+				$popup.addClass(s.popupClass);
         for (i = numItems; i > 1; i--) {
 					// Find all of the list items that have been pushed below the first item. Put those items into the popup menu. Put one additional item into the popup menu to cover situations where the last item is shorter than the "more" text.
 					$lastChild = $this.find('> li:last-child');
