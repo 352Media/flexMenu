@@ -1,4 +1,4 @@
-#flexMenu 1.2
+#flexMenu 1.3
 flexMenu is a jQuery plugin that lets you create responsive menus that automatically collapse into a "more" drop-down when they run out of space.  When there's only space to display one or two items, all the items collapse into a "menu" drop-down.
 
 [Demo](http://352media.github.com/flexMenu/)
@@ -83,7 +83,7 @@ Should we absolutely position the popup? Usually this is a good idea. That way, 
 
 ###popupClass
 (string, defaults to '')
-If this is set, this class will be added to the popup
+If this is set, this class will be added to the `flexMenu-popup` element.
 
 ##License
 

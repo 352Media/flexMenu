@@ -1,4 +1,4 @@
-/*	jQuery.flexMenu 1.2
+/*	jQuery.flexMenu 1.3
 	https://github.com/352Media/flexMenu
 	Description: If a list is too long for all items to fit on one line, display a popup menu instead.
 	Dependencies: jQuery, Modernizr (optional). Without Modernizr, the menu can only be shown on click (not hover). */
