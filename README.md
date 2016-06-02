@@ -1,4 +1,4 @@
-#flexMenu 1.3
+# flexMenu 1.3
 flexMenu is a jQuery plugin that lets you create responsive menus that automatically collapse into a "more" drop-down when they run out of space.  When there's only space to display one or two items, all the items collapse into a "menu" drop-down.
 
 [Demo](http://352media.github.com/flexMenu/)
@@ -9,14 +9,21 @@ Written by [Ryan DeBeasi](http://www.ryandebeasi.com/) and [our fantastic contri
 
 ##Usage
 
-First, download flexmenu.js from GitHub or install it with `bower install flexmenu`. Then, add a script tag that references flexMenu. For example: `<script src="flexmenu.js"></script>`.
+First, download flexmenu.min.js from GitHub or install it with `bower install flexmenu`. Then, add flexMenu to your page. (Be sure to include jQuery if it's not already there.) For example:
 
-Create an unordered list that contains your menu items. In CSS, use `display: inline-block;` or `float: left;` to get the  `li` elements to line up horizontally.
+```html
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="flexmenu.min.js"></script>
+```
+
+Next, create an unordered list that contains your menu items. In CSS, use `display: inline-block;` or `float: left;` to get the  `li` elements to line up horizontally.
 
 Finally, call flexMenu on an unordered list that contains your menu items:
 
 ```javascript
-$('ul.menu.flex').flexMenu();
+$( document ).ready(function() {
+  $('ul.menu.flex').flexMenu();
+});
 ```
 
 ###AMD/RequireJS
@@ -25,14 +32,16 @@ The plugin can be loaded using an AMD loader such as RequireJS:
 
 ```javascript
 require(['jquery', 'flexmenu'], function ($) {
+  $( document ).ready(function() {
     $('ul.menu.flex').flexMenu();
+  });
 });
 ```
 
 ##Dependencies
 
 ###jQuery
-I've tested the plugin in jQuery 1.7-1.9. It probably works on older versions, but I haven't tested on those.
+I've tested the plugin in jQuery 1.7-1.12. It probably works on older versions, but I haven't tested on those.
 
 ###Modernizr
 [Modernizr](http://modernizr.com/) is optional. If it's available, flexMenu will use it to detect touch support. If touch support is available, we'll toggle the menu on click. If touch support is not available, we'll toggle the menu on hover in/out. That way, we can avoid triggering the funky [simulated mouseover/mouseout](http://developer.apple.com/library/ios/#DOCUMENTATION/AppleApplications/Reference/SafariWebContent/HandlingEvents/HandlingEvents.html#//apple_ref/doc/uid/TP40006511-SW17) that happens on many touchscreen devices.
