@@ -12,6 +12,8 @@
 		factory(jQuery);
 	}
 }(function ($) {
+	var windowWidth = $(window).width(); // Store the window width
+  	var windowHeight = $(window).height(); // Store the window height
 	var flexObjects = [], // Array of all flexMenu objects
 		resizeTimeout;
 	// When the page is resized, adjust the flexMenus.
@@ -30,10 +32,14 @@
 		$menusToCollapse.removeClass('active').find('> ul').hide();
 	}
 	$(window).resize(function () {
-		clearTimeout(resizeTimeout);
-		resizeTimeout = setTimeout(function () {
-			adjustFlexMenu();
-		}, 200);
+		if ($(window).width() != windowWidth && $(window).height() != windowHeight) {
+			clearTimeout(resizeTimeout);
+			resizeTimeout = setTimeout(function () {
+				adjustFlexMenu();
+			}, 200);
+			windowWidth = $(window).width(); // Store the window width if it changed
+        		windowHeight = $(window).height(); // Store the window height if it changed
+		}
 	});
 	$.fn.flexMenu = function (options) {
 		var checkFlexObject,
