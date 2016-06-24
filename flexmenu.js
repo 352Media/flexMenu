@@ -18,11 +18,15 @@
 		resizeTimeout;
 	// When the page is resized, adjust the flexMenus.
 	function adjustFlexMenu() {
-		$(flexObjects).each(function () {
-			$(this).flexMenu({
-				'undo' : true
-			}).flexMenu(this.options);
-		});
+		if ($(window).width() !== windowWidth || $(window).height() !== windowHeight) {
+			$(flexObjects).each(function () {
+				$(this).flexMenu({
+					'undo' : true
+				}).flexMenu(this.options);
+			});
+			windowWidth = $(window).width(); // Store the window width if it changed
+			windowHeight = $(window).height(); // Store the window height if it changed
+		}
 	}
 	function collapseAllExcept($menuToAvoid) {
 		var $activeMenus,
@@ -32,14 +36,10 @@
 		$menusToCollapse.removeClass('active').find('> ul').hide();
 	}
 	$(window).resize(function () {
-		if ($(window).width() != windowWidth && $(window).height() != windowHeight) {
-			clearTimeout(resizeTimeout);
-			resizeTimeout = setTimeout(function () {
-				adjustFlexMenu();
-			}, 200);
-			windowWidth = $(window).width(); // Store the window width if it changed
-        		windowHeight = $(window).height(); // Store the window height if it changed
-		}
+		clearTimeout(resizeTimeout);
+		resizeTimeout = setTimeout(function () {
+			adjustFlexMenu();
+		}, 200);
 	});
 	$.fn.flexMenu = function (options) {
 		var checkFlexObject,
