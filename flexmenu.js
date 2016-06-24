@@ -65,7 +65,6 @@
 		return this.each(function () {
 			var $this = $(this),
 				$items = $this.find('> li'),
-				$self = $this,
 				$firstItem = $items.first(),
 				$lastItem = $items.last(),
 				numItems = $this.find('li').length,
@@ -85,11 +84,10 @@
 				return result;
 			}
 			if (needsMenu($lastItem) && numItems > s.threshold && !s.undo && $this.is(':visible')) {
-				var $popup = $('<ul class="flexMenu-popup" style="display:none;' + ((s.popupAbsolute) ? ' position: absolute;' : '') + '"></ul>'),
-				// Move all list items after the first to this new popup ul
-					firstItemOffset = $firstItem.offset().top;
+				var $popup = $('<ul class="flexMenu-popup" style="display:none;' + ((s.popupAbsolute) ? ' position: absolute;' : '') + '"></ul>');
 				// Add class if popupClass option is set
 				$popup.addClass(s.popupClass);
+				// Move all list items after the first to this new popup ul
         for (i = numItems; i > 1; i--) {
 					// Find all of the list items that have been pushed below the first item. Put those items into the popup menu. Put one additional item into the popup menu to cover situations where the last item is shorter than the "more" text.
 					$lastChild = $this.find('> li:last-child');
