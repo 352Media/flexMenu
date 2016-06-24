@@ -1,0 +1,26 @@
+{
+  "name": "flexMenu",
+  "version": "1.4.0",
+  "homepage": "https://github.com/352Media/flexMenu",
+  "authors": [
+    "Ryan DeBeasi <hi@ryandebeasi.com>"
+  ],
+  "description": "FlexMenu lets you create menu bars that automatically collapse into a drop-down to fit the space available.",
+  "main": "flexmenu.js",
+  "keywords": [
+    "menu",
+    "responsive",
+    "design"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">1.7.0"
+  }
+}

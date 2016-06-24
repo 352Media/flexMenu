@@ -1,28 +1,47 @@
-#flexMenu 1.1.1
+# flexMenu 1.4
 flexMenu is a jQuery plugin that lets you create responsive menus that automatically collapse into a "more" drop-down when they run out of space.  When there's only space to display one or two items, all the items collapse into a "menu" drop-down.
 
 [Demo](http://352media.github.com/flexMenu/)
 
 [Source on GitHub](https://github.com/352Media/flexMenu)
 
-Author: [Ryan DeBeasi](http://www.ryandebeasi.com/)
-
-Contributors: [Pete Bernardo](https://github.com/peterbernardo), [Dennis S. Hennen](https://github.com/dsh), and [Blake McLeod](https://github.com/bmcleod)
+Written by [Ryan DeBeasi](http://www.ryandebeasi.com/) and [our fantastic contributors](https://github.com/352Media/flexMenu/graphs/contributors).
 
 ##Usage
 
-Create an unordered list that contains your menu items. In CSS, use `display: inline-block;` or `float: left;` to get the  `li` elements to line up horizontally.
+First, download flexmenu.min.js from GitHub or install it with `bower install flexmenu`. Then, add flexMenu to your page. (Be sure to include jQuery if it's not already there.) For example:
 
-Call flexMenu on an unordered list that contains your menu items.
+```html
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="flexmenu.min.js"></script>
+```
+
+Next, create an unordered list that contains your menu items. In CSS, use `display: inline-block;` or `float: left;` to get the  `li` elements to line up horizontally.
+
+Finally, call flexMenu on an unordered list that contains your menu items:
 
 ```javascript
-$('ul.menu.flex').flexMenu();
+$( document ).ready(function() {
+  $('ul.menu.flex').flexMenu();
+});
+```
+
+###AMD/RequireJS
+
+The plugin can be loaded using an AMD loader such as RequireJS:
+
+```javascript
+require(['jquery', 'flexmenu'], function ($) {
+  $( document ).ready(function() {
+    $('ul.menu.flex').flexMenu();
+  });
+});
 ```
 
 ##Dependencies
 
 ###jQuery
-I've tested the plugin in jQuery 1.7-1.9. It probably works on older versions, but I haven't tested on those.
+I've tested the plugin in jQuery 1.7-1.12. It probably works on older versions, but I haven't tested on those.
 
 ###Modernizr
 [Modernizr](http://modernizr.com/) is optional. If it's available, flexMenu will use it to detect touch support. If touch support is available, we'll toggle the menu on click. If touch support is not available, we'll toggle the menu on hover in/out. That way, we can avoid triggering the funky [simulated mouseover/mouseout](http://developer.apple.com/library/ios/#DOCUMENTATION/AppleApplications/Reference/SafariWebContent/HandlingEvents/HandlingEvents.html#//apple_ref/doc/uid/TP40006511-SW17) that happens on many touchscreen devices.
@@ -71,11 +90,15 @@ If this is true, we'll move the list items back to where they were before, and r
 (boolean, defaults to 'true')
 Should we absolutely position the popup? Usually this is a good idea. That way, the popup can appear over other content and spill outside a parent that has overflow: hidden set. If you want to do something different from this in CSS, just set this option to false.
 
+###popupClass
+(string, defaults to '')
+If this is set, this class will be added to the `flexMenu-popup` element.
+
 ##License
 
 flexMenu is licensesed under the MIT License, and is free for commercial or personal use.
 
-Copyright &copy; 2012 352 Media Group
+Copyright &copy; 2012-2014 352 Inc. & Contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
