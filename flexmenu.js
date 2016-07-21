@@ -50,6 +50,7 @@
 				'linkTitle' : 'View More', // [string] What should the title of the "view more" button be?
 				'linkTextAll' : 'Menu', // [string] If we hit the cutoff, what text should we display on the "view more" link?
 				'linkTitleAll' : 'Open/Close Menu', // [string] If we hit the cutoff, what should the title of the "view more" button be?
+				'shouldApply' : function() { return true; }, // [function] Function called before applying flexMenu. If it returns false, it will not be applied.
 				'showOnHover' : true, // [boolean] Should we we show the menu on hover? If not, we'll require a click. If we're on a touch device - or if Modernizr is not available - we'll ignore this setting and only show the menu on click. The reason for this is that touch devices emulate hover events in unpredictable ways, causing some taps to do nothing.
 				'popupAbsolute' : true, // [boolean] Should we absolutely position the popup? Usually this is a good idea. That way, the popup can appear over other content and spill outside a parent that has overflow: hidden set. If you want to do something different from this in CSS, just set this option to false.
 				'popupClass' : '', // [string] If this is set, this class will be added to the popup
@@ -83,7 +84,8 @@
 				// Values may be calculated from em and give us something other than round numbers. Browsers may round these inconsistently. So, let's round numbers to make it easier to trigger flexMenu.
 				return result;
 			}
-			if (needsMenu($lastItem) && numItems > s.threshold && !s.undo && $this.is(':visible')) {
+			if (needsMenu($lastItem) && numItems > s.threshold && !s.undo && $this.is(':visible')
+				&& (s.shouldApply())) {
 				var $popup = $('<ul class="flexMenu-popup" style="display:none;' + ((s.popupAbsolute) ? ' position: absolute;' : '') + '"></ul>');
 				// Add class if popupClass option is set
 				$popup.addClass(s.popupClass);
