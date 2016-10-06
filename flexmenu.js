@@ -1,4 +1,4 @@
-/*	jQuery.flexMenu 1.4
+/*	jQuery.flexMenu 1.4.2
 	https://github.com/352Media/flexMenu
 	Description: If a list is too long for all items to fit on one line, display a popup menu instead.
 	Dependencies: jQuery, Modernizr (optional). Without Modernizr, the menu can only be shown on click (not hover). */
@@ -92,7 +92,6 @@
 					// Find all of the list items that have been pushed below the first item. Put those items into the popup menu. Put one additional item into the popup menu to cover situations where the last item is shorter than the "more" text.
 					$lastChild = $this.find('> li:last-child');
 					keepLooking = (needsMenu($lastChild));
-					$lastChild.appendTo($popup);
 					// If there only a few items left in the navigation bar, move them all to the popup menu.
 					if ((i - 1) <= s.cutoff) { // We've removed the ith item, so i - 1 gives us the number of items remaining.
 						$($this.children().get().reverse()).appendTo($popup);
@@ -101,6 +100,8 @@
 					}
 					if (!keepLooking) {
 						break;
+					} else {
+						$lastChild.appendTo($popup);
 					}
 				}
 				if (allInPopup) {
