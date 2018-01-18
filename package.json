@@ -1,9 +1,9 @@
 {
   "name": "flexmenu",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "description": "FlexMenu lets you create menu bars that automatically collapse into a drop-down to fit the space available.",
   "main": "flexmenu.js",
-  "repository": "https://github.com/jameelmoses/flexMenu.git",
-  "author": "Jameel Moses <jameel@interactivestrategies.com>",
+  "repository": "https://github.com/352Media/flexMenu.git",
+  "author": "352 Inc. <hello@352inc.com>",
   "license": "MIT"
 }
