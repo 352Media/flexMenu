@@ -78,6 +78,10 @@ If we hit the cutoff and collapse all the links into the popup, what text should
 (string, defaults to 'Menu')
 If we hit the cutoff and collapse all the links into the popup, what should the title of the "menu" link be?
 
+### shouldApply
+(function)
+Should we apply now ? Function called before moving anything. If it returns false, we'll move the list items back to where they were before, and remove the "View More" link.
+
 ### showOnHover
 (boolean, defaults to 'true')
 Should we we show the menu on hover? If not, we'll require a click. If we're on a touch device - or if Modernizr is not available - we'll ignore this setting and only show the menu on click. The reason for this is that touch devices emulate hover events in unpredictable ways, causing some taps to do nothing.
