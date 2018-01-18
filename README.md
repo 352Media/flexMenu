@@ -5,6 +5,8 @@ flexMenu is a jQuery plugin that lets you create responsive menus that automatic
 
 [Source on GitHub](https://github.com/352Media/flexMenu)
 
+[Available on CDNJS](https://cdnjs.com/libraries/flexMenu)
+
 Written by [Ryan DeBeasi](http://www.ryandebeasi.com/) and [our fantastic contributors](https://github.com/352Media/flexMenu/graphs/contributors).
 
 ## Usage
