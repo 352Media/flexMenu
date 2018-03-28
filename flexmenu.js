@@ -68,7 +68,7 @@
 				$items = $this.find('> li'),
 				$firstItem = $items.first(),
 				$lastItem = $items.last(),
-				numItems = $this.find('> li').length,
+				numItems = $items.length,
 				firstItemTop = Math.floor($firstItem.offset().top),
 				firstItemHeight = Math.floor($firstItem.outerHeight(true)),
 				$lastChild,
