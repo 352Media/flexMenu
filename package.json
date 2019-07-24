@@ -1,5 +1,5 @@
 {
-  "name": "flexmenu",
+  "name": "@rdebeasi/flexmenu",
   "version": "1.6.0",
   "description": "FlexMenu lets you create menu bars that automatically collapse into a drop-down to fit the space available.",
   "main": "flexmenu.js",
